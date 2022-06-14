@@ -27,6 +27,13 @@ class Country extends Model
     //Relacionamento de um para muitos hasMany
     public function states()
     {
+        // return $this->hasMany(State::class, 'country_id', 'id');
         return $this->hasMany(State::class);
+    }
+
+    //Relacionamento de cidades
+    public function cities()
+    {
+        return $this->hasManyThrough(City::class, State::class);
     }
 }
