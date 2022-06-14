@@ -13,8 +13,9 @@ class CreateCompanyCityTable extends Migration
      */
     public function up()
     {
+        //'company_city' - nome da tabela precisou ser informado no model city e company
         Schema::create('company_city', function (Blueprint $table) {
-            $table->increments('id');
+             $table->increments('id');
              $table->integer('city_id')->unsigned();
              $table->integer('company_id')->unsigned();
 
