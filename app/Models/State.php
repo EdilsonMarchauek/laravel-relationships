@@ -27,4 +27,10 @@ class State extends Model
     {
         return $this->hasMany(City::class);
     }
+
+     //Relacionamento Polimórfico - retorna todos os comentários dos estados
+     public function comments()
+     {
+         return $this->morphMany(Comment::class, 'commentable');
+     }
 }

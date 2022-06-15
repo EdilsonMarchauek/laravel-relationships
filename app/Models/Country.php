@@ -36,4 +36,10 @@ class Country extends Model
     {
         return $this->hasManyThrough(City::class, State::class);
     }
+
+    //Relacionamento Polimórfico - retorna todos os comentários dos paises
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }

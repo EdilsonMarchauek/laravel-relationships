@@ -16,4 +16,10 @@ class City extends Model
         return $this->belongsToMany(Company::class, 'company_city');
     }
 
+    //Relacionamento Polimórfico - retorna todos os comentários da cidade
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 }
